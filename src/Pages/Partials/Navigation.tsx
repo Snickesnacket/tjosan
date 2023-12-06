@@ -61,15 +61,15 @@ function Navigation() {
               </>
             ) : (
               <>
-                <Nav.Link as={NavLink} to="/Loggain">
+                <Nav.Link style={{color: 'pink'}} as={NavLink} to="/Loggain">
                   {" "}
                   LOGGA IN
                 </Nav.Link>
-                <Nav.Link as={NavLink} to="/SkapaTips">
+                <Nav.Link style={{color: 'pink'}} as={NavLink} to="/SkapaTips">
                   {" "}
                   SKRIV TIPS
                 </Nav.Link>
-              </>
+              </> 
             )}
           </Nav>
         </Navbar.Collapse>

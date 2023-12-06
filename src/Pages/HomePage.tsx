@@ -5,7 +5,7 @@ import {
   Libraries,
   MarkerF,
 } from "@react-google-maps/api";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getGeocode, getLatLng } from "use-places-autocomplete";
 import { SearchComponent } from "../components/SearchComponent";
@@ -176,7 +176,7 @@ if (!isLoaded || isLoadingRestaurants)
     );
 
   return (
-    <div>
+    <Container className="py-2">
       <GoogleMap
         zoom={zoom}
         center={location}
@@ -221,8 +221,8 @@ if (!isLoaded || isLoadingRestaurants)
       </Button>
       </div>
       <RenderRestaurantsList validRestaurants={validFilteredRestaurants} />
-      </div>
+      </Container>
   );
-};
+};  
 
 export default Map;

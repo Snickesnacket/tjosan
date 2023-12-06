@@ -17,10 +17,10 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <div id="App">
-      <Navigation />
-      <Container className="py-3">
+      <Navigation /> 
+      <Container>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
           <Route path="/UppdateraProfil" element={<UpdateProfile />} />
           <Route path="/Admins" element={<AllAdmin />} />
           <Route path="/SkapaRestaurang" element={<CreateRestaurant />}></Route>
@@ -33,7 +33,7 @@ function App() {
           <Route path="/Loggaut" element={<LoggaUtPage />} />
           <Route path="/SkapaTips" element={<CreateTip />} />
         </Routes>
-      </Container>
+        </Container>
       <ToastContainer/>
     </div>
   );

@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { RestaurantFormData } from "../types/Restaurant.types";
+import { Container } from "react-bootstrap";
 
 interface IProps {
   onSave: (data: RestaurantFormData) => Promise<void>;
@@ -32,6 +33,7 @@ const RestaurantForm: React.FC<IProps> = ({ onSave, initialValues }) => {
   }, [isSubmitSuccessful, reset, initialValues]);
 
   return (
+    <Container className="py-3">
     <Form onSubmit={handleSubmit(onFormSubmit)} className="mb-3">
       <Form.Group>
         <Form.Label className="title-centered" >Namn</Form.Label>
@@ -102,6 +104,7 @@ const RestaurantForm: React.FC<IProps> = ({ onSave, initialValues }) => {
         Spara
       </Button>
     </Form>
+    </Container>
   );
 };
 

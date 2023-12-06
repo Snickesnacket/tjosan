@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { NewTip, Tip } from "../types/Tips.types";
 import { toast } from "react-toastify";
+import { Container } from "react-bootstrap";
 
 interface IProps {
   onSave: (data: Tip) => Promise<void>;
@@ -37,6 +38,7 @@ const TipForm: React.FC<IProps> = ({ onSave, initialValues }) => {
   }, [isSubmitSuccessful, reset, initialValues]);
 
   return (
+    <Container className="py-3">
     <Form onSubmit={handleSubmit(onFormSubmit)} className="mb-3">
       <Form.Group>
         <Form.Label>Email</Form.Label>
@@ -55,6 +57,7 @@ const TipForm: React.FC<IProps> = ({ onSave, initialValues }) => {
         Spara
       </Button>
     </Form>
+    </Container>
   );
 };
 
