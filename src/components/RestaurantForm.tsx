@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { RestaurantFormData } from "../types/Restaurant.types";
 import { Container } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 interface IProps {
   onSave: (data: RestaurantFormData) => Promise<void>;
@@ -24,11 +25,13 @@ const RestaurantForm: React.FC<IProps> = ({ onSave, initialValues }) => {
     data: RestaurantFormData
   ) => {
     await onSave(data);
+    toast.success('Restaurangen tillagd!')
   };
 
   useEffect(() => {
     if (isSubmitSuccessful) {
       reset(initialValues);
+      toast.success('Restaurang tillagd!')
     }
   }, [isSubmitSuccessful, reset, initialValues]);
 

@@ -16,15 +16,19 @@ export const MarkersComponent: React.FC<Iprops> = ({
   isOpen,
   infoWindowData,
 }) => {
+  
   return (
     <>
       {validRestaurants.map((restaurant: Restaurant) => {
+         if (typeof restaurant.Latitude !== 'number' || typeof restaurant.Longitude !== 'number') {
+          console.error('undefined lat/lng restaurang:', restaurant);
+          return null;}
         return (
           <MarkerF
             key={restaurant._id}
             position={{
-              lat: restaurant.Latitude!,
-              lng: restaurant.Longitude!,
+              lat: restaurant.Latitude,
+              lng: restaurant.Longitude,
             }}
             onClick={() => handleMarkerClick(restaurant)}
           >
@@ -42,4 +46,5 @@ export const MarkersComponent: React.FC<Iprops> = ({
       })}
     </>
   );
+
 };
